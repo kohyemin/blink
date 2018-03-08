@@ -1,15 +1,18 @@
 #include "Arduino.h"
 #include "Blink.h"
 
-void Blink_Init(){
-   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+Blink::Blink(int pin)
+{
+  pinMode(pin, OUTPUT);
+  _pin = pin;
 }
 
-void Led_On(){
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+void Blink::Led_On(int t){
+  digitalWrite(_pin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(t);
 }
 
-void Led_Off(){
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+void Blink::Led_Off(int t){
+  digitalWrite(_pin, LOW);    // turn the LED off by making the voltage LOW
+  delay(t);
 }

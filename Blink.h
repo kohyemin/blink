@@ -1,3 +1,11 @@
-void Blink_Init();
-void Led_On();
-void Led_Off();
+#include "Arduino.h"
+
+class Blink
+{
+  public:
+    Blink(int pin);
+    void Led_On(int t);
+    void Led_Off(int t);
+   private:
+    int _pin;
+};
